@@ -4,6 +4,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ThemeController;
+use App\Http\Controllers\AttemptController;
 
 Route::middleware(['auth', 'verified'])->group(function () {
     // Dashboard
@@ -18,4 +19,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Theme
     Route::patch('/theme', [ThemeController::class, 'update'])->name('theme.update');
+
+    // Quizzes for students
+    Route::get('/quizzes', [AttemptController::class, 'index'])->name('quizzes.index');
+    Route::get('/quizzes/{quiz}', [AttemptController::class, 'show'])->name('quizzes.show');
+    Route::post('/quizzes/{quiz}', [AttemptController::class, 'store'])->name('quizzes.store');
+    Route::get('/quizzes/{quiz}/result', [AttemptController::class, 'result'])->name('quizzes.result');
 });

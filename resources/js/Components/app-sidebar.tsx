@@ -35,10 +35,18 @@ const navigation = [
         isActive: route().current("dashboard"),
     },
     {
-        title: "Settings",
-        url: route("profile.edit"),
-        icon: Settings2,
-        isActive: route().current("profile.edit"),
+        title: "Quizzes",
+        url: route("quizzes.index"),
+        icon: BookOpen,
+        isActive: route().current("quizzes.*"),
+        viewBy: "user",
+    },
+    {
+        title: "Manage Quizzes",
+        url: route("admin.quizzes.index"),
+        icon: FileText,
+        isActive: route().current("admin.quizzes.*"),
+        viewBy: "admin",
     },
     {
         title: "Users",
@@ -46,6 +54,12 @@ const navigation = [
         icon: Users,
         isActive: route().current("admin.users.*"),
         viewBy: "admin",
+    },
+    {
+        title: "Settings",
+        url: route("profile.edit"),
+        icon: Settings2,
+        isActive: route().current("profile.edit"),
     },
 ];
 
@@ -56,7 +70,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     const filteredNavigation = navigation.filter(
         (item) =>
             !item.viewBy ||
-            auth.user.roles.some((role) => role.name === item.viewBy)
+            auth.user.roles.some((role) => role.name === item.viewBy),
     );
 
     return (

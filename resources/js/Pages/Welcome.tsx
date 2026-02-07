@@ -15,8 +15,7 @@ import {
 const features = [
     {
         name: "Automatic Evaluation",
-        description:
-            "Instant quiz grading with automatic score calculation",
+        description: "Instant quiz grading with automatic score calculation",
         icon: Zap,
     },
     {
@@ -88,7 +87,9 @@ export default function Welcome({ auth }: PageProps) {
                         <div className="mx-auto max-w-3xl py-24 sm:py-32">
                             <div className="text-center">
                                 <h1 className="text-4xl font-bold tracking-tight sm:text-6xl ">
-                                    <span className="text-primary">Cloud_404</span>
+                                    <span className="text-primary">
+                                        Cloud_404
+                                    </span>
                                     <br />
                                     <span className="text-3xl sm:text-5xl">
                                         Quiz Management System
@@ -96,8 +97,10 @@ export default function Welcome({ auth }: PageProps) {
                                 </h1>
 
                                 <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                                    A modern cloud-based platform for creating, managing, and taking quizzes. 
-                                    Perfect for educators and students with automatic grading and real-time results.
+                                    A modern cloud-based platform for creating,
+                                    managing, and taking quizzes. Perfect for
+                                    educators and students with automatic
+                                    grading and real-time results.
                                 </p>
                                 <div className="mt-10 flex items-center justify-center gap-x-6">
                                     <Button size="lg" asChild>
